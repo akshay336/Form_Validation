@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="jquery_form_validation/jquery/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css"/>
+    <link rel="stylesheet" href="jquery_form_validation/jquery/jQuery-Validation-Engine-master/css/template.css" type="text/css"/>
+    <script src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/jquery-1.8.2.min.js" type="text/javascript">
+    </script>
+    <script src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8">
+    </script>
+    <script src="jquery_form_validation/jquery/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+    </script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery("#formID2").validationEngine('attach', {
+                onValidationComplete: function(form, status){
+                    alert("The form status is: " +status+", it will never submit");
+                }  
+            })
+        });
+    </script>
+
+</head>
+
+<body>
+    <form method="post" id="formID2">
+    <table border="1" width=100%>
+        <tr>
+            <td> <a href="student.html"><button type="button" name="link">Home</button></a></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="fld_student_name" id="fld_student_name"  placeholder="Enter Username"   pattern="[a-zA-Z\s]+" class="validate[required,custom[onlyLetterSp]] text-input"  ></td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+        </tr>
+
+        <tr>
+            <td><input type="password" name="" id="" placeholder="Enter Password" class="validate[required] text-input" ></td>
+
+        </tr>
+
+        <tr>
+            <th><button type="Login"name="Login">Login</button></th>
+        </tr>
+
+        <tr>
+            <th align="right">
+                <a href="forms.html">Create New Account</a>
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <script type="text/javascript">
+
+function validateForm() 
+		{
+			var x = document.forms["myForm"]["name"].value;
+			if (x == "") 
+			{																							
+				alert("Name must be filled out");
+				return false;
+			}
+            var x = document.forms["myForm"]["Address"].value;
+			if (x == "") 
+			{																							
+				alert("Address must be filled out");
+				return false;
+			}
+
+            var x = document.forms["myForm"]["Address"].value;
+			if (x == "") 
+			{																							
+				alert("Address must be filled out");
+				return false;
+			}
+
+            var x = document.forms["myForm"]["Username"].value;
+			if (x == "") 
+			{
+				alert("Username must be filled out");
+				return false;
+			}
+
+            var x = document.forms["myForm"]["password"].value;
+			if (x == "") 
+			{
+				alert("password must be filled out");
+				return false;
+			}
+            var x = document.forms["myForm"]["city"].value;
+			if (x == "") 
+			{
+				alert("city must be filled out");
+				return false;
+			}
+
+        }    
+    </script>
+</head>
+<body>
+    <form action="" method="post" name="myForm" onsubmit="return validateForm()" >
+    <table border="1"width=100%>
+    <th><h3>Student Registration</h1></th>
+    </table> <br><br><br><br>
+        <table border="1"width=100%>
+           <tr>
+               <td><label for="name"> Name:</label></td>
+               <td><input type="text"  name="name" id="fld_student_name" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*)\./g, '$1');"></td>
+
+               <td>Address:</td>
+               <td><textarea name="fld_student_address" id="Address" placeholder="Enter Your Address" rows="5" rocols="5"  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*)\./g, '$1');"></textarea></td>
+           </tr>
+         
+            <tr>
+                <td>
+                    Username:
+                </td>
+                <td><input type="" name="fld_student_name" id="Username" placeholder="Enter your Username"
+                    pattern="[a-zA-Z\s]+"></td>
+
+                    <td>Password:</td>
+
+                    <td> <input type="password" name="fld_student_password" id="password" placeholder="Enter your password"></td>
+
+                </tr>
+                 <tr>
+                    <td>City:</td>
+                    <td><select name="fld_student_city" id="city">
+                        <option value="Select City">Select City</option>
+                            <option value="Nashik">Nashik</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Sangamner">Sangamner</option>
+                    </select> </td>
+
+                    <td>State:</td>
+                    <td><select name="fld_student_city" id="fld_student_city">
+                        <option value="Select State">Select State</option>
+                            <option value="Maharastra">Nashik</option>
+                            <option value="Aasam">Pune</option>
+                            <option value="Punjab">Mumbai</option>
+                            <option value="Goa">Sangamner</option>
+                    </select> </td>
+                </tr>
+
+                <tr>
+                    <td>country:</td>
+                    <td> <select name="fld_student_city" id="fld_student_city">
+                        <option value="Select country">Select country</option>
+                            <option value="India">Nashik</option>
+                            <option value="America">Pune</option>
+                            <option value="Australia">Mumbai</option>
+                            <option value="sri lanka">Sangamner</option>
+                    </select></td>
+                    <td>Nationality:</td>
+                    <td><input type="" name="fld_student_name" id="fld_student_name" placeholder=" Your Nationality "
+                        pattern="[a-zA-Z\s]+"></td>
+                  
+                </tr>
+              
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="fld_student_gender" id="fld_student_gender1"
+                        value="Male">Male
+                         <input type="radio" name="fld_dtudent_gender" id="fld_student_gender2"value="Female>Female">Female </td>
+                        <td>Qualification:</td>
+                        <td> <input type="checkbox" name="fld_student_language[]" id="fld_student_language1"
+                            value="marathi">MCA
+                 
+                            <input type="checkbox" name="fld_student_language[]" id="fld_student_language1"
+                            value="Hindi">BCA
+                 
+                            <input type="checkbox" name="fld_student_language[]" id="fld_student_language1"
+                            value="English">BA
+                 
+                            <input type="checkbox" name="fld_student_language[]" id="fld_student_language1"
+                            value="Tamil">PHD <br><br>
+                 </td>  
+                </tr>
+                <tr>
+                    <td>
+                        Courses:
+                    </td>
+                    <td> <select name="fld_student_city" id="fld_student_city">
+                        <option value="Select country">Select Courses</option>
+                            <option value="WEB">WEB</option>
+                            <option value="APP">APP</option>
+                            <option value="AUTOCAD">AUTOCAD</option>
+                            <option value="C-DAC">C-DAC</option>
+                    </select></td>
+
+                    <td>Photo:</td>
+
+                    <td>
+                        <input type="file" name="fld_student_file" id="fld_student_file" placeholder="Select the file">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hobbies:</td>
+                    <td>
+                        <input type="text" name="fld_student_file" id="fld_student_file" placeholder="Enter your Hobbies">
+                    </td>
+
+                    <td>Mobile:</td>
+                    <td>
+                        <input type="number" name="fld_student_file" id="fld_student_file" placeholder="Enter your mobile number">
+                     </td>
+                </tr>
+                
+            
+                    <tr>
+                         <td <align="center"><button type="submit" name="submit">SUBMIT</td>
+                           <td align="center"colspan="4"> <a href="login.html"><button type="button"name="link">Login </button></a></td>
+                    </tr>
+              
+            
+        
+
+           
+
+        
+        </table>
+    </form>
+</body>
+</html>

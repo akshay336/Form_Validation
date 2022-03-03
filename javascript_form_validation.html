@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+
+	<script type="text/javascript">
+		
+		function validateForm() 
+		{
+			var x = document.forms["myForm"]["fld_student_name"].value;
+			if (x == "") 
+			{
+				alert("Name must be filled out");
+				return false;
+			}
+
+			var x = document.forms["myForm"]["email"].value;
+			if (x == "") 
+			{
+				alert("Email must be filled out");
+				return false;
+			}
+
+			var x = document.forms["myForm"]["city"].value;
+			if (x == "") 
+			{
+				alert("city must be filled out");
+				return false;
+			}
+
+			var x = document.forms["myForm"]["mobile"].value;
+			if (x == "") 
+			{
+				alert("mobile must be filled out");
+				return false;
+			}
+
+			var x = document.getElementById('password').value;
+			if (x == "") 
+			{
+				alert("Password must be filled out");
+				return false;
+			}
+
+			var test=document.getElementsByName("lang[]");
+
+			if((test[0].checked==false) && (test[1].checked==false) && (test[2].checked==false))
+			{
+				alert("language must be filled out");
+				return false;
+			}
+
+		} 
+	</script>
+	
+</head>
+<body>
+	
+
+	<form method="post" name="myForm" onsubmit="return validateForm()" >
+		<label>Name :</label>
+		<input type="text" name="fld_student_name" id="name" placeholder="Enter Your Name"  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*)\./g, '$1');">
+		<br><br>
+
+		<label>Email :</label>
+		<input type="email" name="email" placeholder="Enter Your Email" pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$">
+		<br><br>
+
+		<label>Mobile :</label>
+		<input type="text" name="mobile" placeholder="Enter Your Mobile" pattern="[7-9]{1}[0-9]{9}" minlength="10" maxlength="10" id="mobile" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
+		<br><br>
+
+		<label>Password :</label>
+		<input type="password" name="password" placeholder="Enter Your Password" id="password">
+		<br><br>
+
+		<label>Photo :</label>
+		<input type="file" name="photo" id="image" accept=".png, .jpg, .jpeg" onchange="return fileValidation()">
+
+		 <script>
+                            function fileValidation() {
+                                var fileInput =
+                                    document.getElementById('image');
+
+                                var filePath = fileInput.value;
+
+                                // Allowing file type 
+                                var allowedExtensions =
+                                    /(\.jpg|\.jpeg|\.png)$/i;
+
+                                if (!allowedExtensions.exec(filePath)) {
+                                    alert('Invalid Image type');
+                                    fileInput.value = '';
+                                    return false;
+                                }
+
+                            }
+
+                        </script>
+		<br><br>
+
+		<label>Address :</label>
+		<textarea name="address" placeholder="Enter Your Address"></textarea>
+		<br><br>
+
+		<label>Birth Date :</label>
+		<input type="date" name="dob">
+		<br><br>
+
+		<label>City :</label>
+		<select name="city">
+			<option value="">Select City</option>
+			<option value="Nashik">Nashik</option>
+			<option value="Pune">Pune</option>
+			<option value="Mumbai">Mumbai</option>
+		</select>
+		<br><br>
+
+		<label>Gender :</label>
+		<input type="radio" name="gender" value="Male" >Male
+		<input type="radio" name="gender" value="Female">Female
+		<br><br>
+
+		<label>Language :</label>
+		<input type="checkbox" name="lang[]" value="Marathi">Marathi
+		<input type="checkbox" name="lang[]" value="English">English
+		<input type="checkbox" name="lang[]" value="Hindi">Hindi
+		<br><br>
+
+		<button type="submit" name="submit">Submit</button>
+		<button type="reset" name="reset">Reset</button>
+		<a href="bootstrap.html"><button type="button" name="demo">Link</button></a>
+	</form>
+
+</body>
+</html>
